@@ -1,5 +1,6 @@
 # Test
 # tests grabbed from Zhihao Ding at www.zhihaoding.com
+source("/Volumes/data/code/datasciencecoursera/RProgramming/ProgrammingAssignment2/cachematrix.R")
 # generate a random square, non-singular matrix
 test <- matrix(runif(9,1,100),3,3)
 # generate the makeCacheMatrix object with this matrix
