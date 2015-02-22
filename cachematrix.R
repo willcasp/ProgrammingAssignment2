@@ -1,19 +1,22 @@
 ## This function creates a special "matrix" object that can cache its inverse
 
-## working functions
-##   get - gets the matrix
-##   updateMatrix - updates the matrix
-##   getInverse - gets the cached matrix
-##   updateMatrixInverse - creates the cached matrix
 
 makeCacheMatrix <- function(x = matrix()) {
+
   m <- NULL
+
+  ##   updateMatrix - updates the matrix
   updateMatrix <- function(y) {
     x <<- y
     m <<- NULL
   }
+  ##   get - gets the matrix
   get <- function() x
+
+  ##   updateMatrixInverse - creates the cached matrix
   updateMatrixInverse <- function(inverse) m <<- inverse
+
+  ##   getInverse - gets the cached matrix
   getInverse <- function() m
   list(updateMatrix = updateMatrix, get = get,
        updateMatrixInverse = updateMatrixInverse,
