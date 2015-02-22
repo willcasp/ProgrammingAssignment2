@@ -1,5 +1,5 @@
 ## This function creates a special "matrix" object that can cache its inverse
-
+##    reused code from the example makeVector code.
 
 makeCacheMatrix <- function(x = matrix()) {
 
@@ -28,6 +28,8 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## This funciton computes the inverse of the special "matrix" returned by makeCacheMatrix
 ##   If the inverse has already been calculated, it will retrieve the inverse from cache
+##   Much of this code is a re-hash of the cachemean example. Just had to swap out inversing
+##   for the existing cachemean.
 
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
@@ -42,6 +44,6 @@ cacheSolve <- function(x, ...) {
   data <- x$get()
   m <- solve(data, ...)
   x$updateMatrixInverse(m)
-  return(m)
+  m
 
 }
